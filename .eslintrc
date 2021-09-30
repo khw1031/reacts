@@ -1,0 +1,36 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["@typescript-eslint", "import"],
+  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:react-hooks/recommended", "prettier"],
+  "rules": {
+    // react
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    // hooks
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": [
+      "warn",
+      {
+        "additionalHooks": "useRecoilCallback"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@typescript-eslint/recommended"]
+    }
+  ]
+}
