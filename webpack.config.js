@@ -22,6 +22,7 @@ module.exports = {
       '@layouts': path.resolve(__dirname, 'src', 'layouts'),
       '@pages': path.resolve(__dirname, 'src', 'pages'),
       '@states': path.resolve(__dirname, 'src', 'states'),
+      '@typings': path.resolve(__dirname, 'src', 'typings'),
     },
   },
   module: {

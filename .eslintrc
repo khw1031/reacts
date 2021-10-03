@@ -30,7 +30,11 @@
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@typescript-eslint/recommended"]
+      "extends": ["plugin:@typescript-eslint/recommended"],
+      "rules": {
+        // typescript
+        "@typescript-eslint/explicit-module-boundary-types": "off"
+      }
     }
   ]
 }
