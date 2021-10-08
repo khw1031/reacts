@@ -1,14 +1,22 @@
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from "react-query/devtools"
 
-import { Login } from '@pages/Login';
-import { SignUp } from '@pages/SignUp';
+import { Posts } from '@components/Posts';
+import './App.css';
 
-export function App() {
+const queryClient = new QueryClient();
+
+function App() {
   return (
-    <Switch>
-      <Redirect exact path="/" to="/login" />
-      <Route path="/login" component={Login} />
-      <Route path="/signup" component={SignUp} />
-    </Switch>
+    // provide React Query client to App
+    <QueryClientProvider client={queryClient}>
+      <div className="App">
+        <h1>Blog Posts</h1>
+        <Posts />
+      </div>
+      <ReactQueryDevtools />
+    </QueryClientProvider>
   );
 }
+
+export default App;

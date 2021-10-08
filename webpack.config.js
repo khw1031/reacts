@@ -19,9 +19,7 @@ module.exports = {
     alias: {
       '@components': path.resolve(__dirname, 'src', 'components'),
       '@hooks': path.resolve(__dirname, 'src', 'hooks'),
-      '@layouts': path.resolve(__dirname, 'src', 'layouts'),
-      '@pages': path.resolve(__dirname, 'src', 'pages'),
-      '@states': path.resolve(__dirname, 'src', 'states'),
+      '@typings': path.resolve(__dirname, 'src', 'typings'),
     },
   },
   module: {
@@ -29,6 +27,10 @@ module.exports = {
       {
         test: /\.tsx?$/,
         use: ['babel-loader'],
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
